@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BleakForce</title>
+    <script src="https://kit.fontawesome.com/c9a42331c6.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Briem+Hand:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+
+        .hh {
+            font-family: "Briem Hand", cursive;
+        }
+
+        h1 {
+            font-weight: 300;
+        }
+
+        .lp {
+            margin-top: -1%;
+            margin-bottom: 2%;
+        }
+
+        .pol {
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            border-radius: 0px;
+            border-bottom: solid black 2px;
+            transition: 0.7s;
+            width: 20%;
+        }
+
+        .pol:focus {
+            outline: none;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            border-radius: 0px;
+            border-bottom: solid lightskyblue 2px;
+            width: 20%;
+        }
+
+        body {
+            font-family: "Ubuntu Sans", sans-serif;
+            font-size: 2.3vh;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-around;
+            width: 94%;
+            align-items: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            background-image: url(https://i.postimg.cc/MH0sNkYF/menu-avto-i-sto-1.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            justify-content: center;
+            padding: 2% 0px;
+        }
+
+        .u {
+            margin-top: 2%;
+        }
+
+        a {
+            text-decoration: none;
+            color: grey;
+        }
+
+        a:active {
+            color: black;
+        }
+
+        .hf {
+            display: flex;
+            width: 45%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .j {
+            position: absolute;
+        }
+
+        .kj,
+        .kjl {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+        }
+
+        .kj {
+            padding: 2%;
+            border-radius: 16px;
+            background-color: rgba(255, 255, 255, 0.75);
+            justify-content: center;
+            box-shadow: 6px 5px 8px 0px rgba(34, 60, 80, 0.5);
+        }
+
+        .r,
+        .rl {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .kjs {
+            display: flex;
+            flex-direction: column;
+            width: 28%;
+        }
+
+        .kjl {
+            width: 50%;
+        }
+
+        .rl {
+            margin-bottom: 3%;
+        }
+
+        .hg {
+            width: 100%;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            margin-top: 2.4%;
+            margin-bottom: 2.8%;
+        }
+
+        .hgl {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+        }
+
+        .hgls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 70%;
+            margin-top: 2%;
+        }
+
+        p {
+            padding: 0px;
+            margin: 0px;
+            margin-top: 0.2%;
+        }
+
+        li {
+            margin-top: 0.8%;
+        }
+
+        .fc {
+            border-radius: 16px;
+        }
+
+        .fca {
+            animation-name: none;
+            padding: 3%;
+            border-radius: 12px;
+            color: white;
+            background-color: black;
+            border: 2px white solid;
+            width: 100%;
+            text-align: center;
+            margin-top: 4.3%;
+            transition: 0.5s;
+            transform: perspective(100px);
+        }
+
+        .fca:hover {
+            padding: 3%;
+            text-align: center;
+            border-radius: 12px;
+            color: black;
+            background-color: white;
+            border: 2px black solid;
+            width: 100%;
+            margin-top: 4.3%;
+        }
+
+        .fca:active {
+            padding: 3%;
+            text-align: center;
+            border-radius: 12px;
+            color: black;
+            background-color: white;
+            border: 2px black solid;
+            width: 100%;
+            margin-top: 4.3%;
+            opacity: 0.75;
+            transform: perspective(100px) rotateX(4deg);
+        }
+
+        form {
+            padding: 2%;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            border: 2px black solid;
+            align-items: center;
+            width: 70%;
+        }
+
+        .s {
+            background-color: rgba(0, 0, 0, 0);
+            border-style: none;
+        }
+
+        .lo {
+            padding: 2px;
+            border-style: solid;
+            border-radius: 6px;
+        }
+
+        @media (width < 1200px) {
+            header {
+                flex-direction: column;
+            }
+
+            .hf {
+                width: 80%;
+            }
+        }
+
+        @media (width < 900px) {
+            .hgls {
+                width: 90%;
+                flex-direction: column;
+            }
+
+            form {
+                width: 90%;
+                flex-direction: column;
+                padding: 1%;
+            }
+
+            .kjs,
+            .lo,
+            .pol,
+            .pol:focus {
+                width: 90%;
+                margin-top: 2%;
+            }
+
+            .s {
+                width: 90%;
+            }
+
+            .lo {
+                margin-bottom: 0.8%;
+            }
+
+            .fca {
+                padding: 3%;
+                border-radius: 12px;
+                color: white;
+                background-color: black;
+                border: 2px white solid;
+                width: 94%;
+                text-align: center;
+                margin-top: 1.7%;
+            }
+
+            .fca:hover {
+                padding: 3%;
+                text-align: center;
+                border-radius: 12px;
+                color: black;
+                background-color: white;
+                border: 2px black solid;
+                width: 94%;
+                margin-top: 1.7%;
+            }
+        }
+
+        @media (width < 600px) {
+            .kj {
+                width: 60%;
+            }
+        }
+
+        @media (width < 650px) {
+            .hf {
+                display: none;
+            }
+
+            body {
+                font-size: 1vh;
+            }
+        }
+
+        @media (width < 850px) {
+            body {
+                font-size: 1.9vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="hh"><i class="fa-solid fa-car"></i> BleakForce</h1>
+        <div class="hf">
+            <a href="#about"><i class="fa-solid fa-circle-info"></i>  О нас</a>
+            <a href="#top"><i class="fa-solid fa-medal"></i>  Наш топ</a>
+            <a href="#why"><i class="fa-solid fa-question"></i>  Почему мы</a>
+            <a href="#question"><i class="fa-regular fa-envelope"></i>  Задать вопрос</a>
+            <a><i class="fa-solid fa-phone-volume"></i>  8-800-555-35-35</a>
+        </div>
+    </header>
+    <hr>
+    <main>
+        <h1>BleakForce</h1>
+        <span class="lp">Тюнинг вашего автомобиля</span>
+        <div class="kjl">
+            <div class="rl">
+                <div class="kj">
+                    <h3 class="u"><i class="fa-solid fa-gauge"></i>  Высокая скорость</h3>Мы выполняем заказы очень
+                    быстро. Время
+                    клиента - один из главных приоритетов.
+                </div>
+                <div class="kj">
+                    <h3 class="u"><i class="fa-regular fa-folder-open"></i>  Большой ассортимент</h3>Мы предлагаем более
+                    300
+                    стилей тюнинга. Вы очень на вряд ли не найдёте себе по вкусу.
+                </div>
+            </div>
+            <div class="r">
+                <div class="kj">
+                    <h3 class="u"><i class="fa-regular fa-star"></i>  Качество</h3>Мы достигли очень больших высот в
+                    сфере
+                    качества. Наши механики - настоящие мастера своего дела!
+                </div>
+                <div class="kj">
+                    <h3 class="u"><i class="fa-regular fa-credit-card"></i>  Варианты оплаты</h3>Мы предоставляем более
+                    550
+                    платёжных систем 90% из которых даже не берут комиссии.
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="about" class="hg">
+        <h1>О нас</h1>
+        <div class="hgl">
+            <p>Мы предлагаем широкий спектр услуг по улучшению и модификации автомобилей, чтобы сделать их уникальными и
+                выделяющимися на дороге.
+                Наша команда опытных мастеров готова воплотить в жизнь самые смелые идеи и пожелания клиентов,
+                обеспечивая высокое качество работы и индивидуальный подход к каждому проекту. Мы специализируемся на
+                следующих услугах:</p>
+            <ul>
+                <li>установка аэродинамического обвеса и спойлеров</li>
+                <li>замена штатных фар и фонарей на ксеноновые и светодиодные</li>
+                <li>перетяжка салона кожей и алькантарой</li>
+                <li>монтаж аудиосистем и мультимедийных комплексов</li>
+                <li>установка спортивных сидений и рулевого колеса</li>
+                <li>доработка тормозной системы и подвески</li>
+                <li>чип-тюнинг двигателя для увеличения мощности и крутящего момента</li>
+                <li>и многое другое</li>
+            </ul>
+            <p>В нашей мастерской вы найдёте всё необходимое оборудование и инструменты для выполнения работ любой
+                сложности. Мы постоянно следим за новинками рынка и внедряем передовые технологии в свою работу, чтобы
+                предложить клиентам самые современные и эффективные решения.
+                Мы гарантируем соблюдение всех норм и стандартов качества, а также предоставляем гарантию на выполненные
+                работы. Обращайтесь к нам, и мы поможем вам сделать ваш автомобиль неповторимым и функциональным!</p>
+        </div>
+    </div>
+    <div id="top" class="hg">
+        <h1>Наш топ</h1>
+        <div class="hgls">
+            <div class="kjs"><img class="fc"
+                    src="https://i.postimg.cc/D0gKVrcD/nissan-silviya-belyj-s14-poziciya-nissan-belaya-cvety-tyuning.jpg">
+                <h3>JDM</h3>
+                <p>Модели JDM отличаются богатым оснащением салона, высокими техническими характеристиками и обычно
+                    имеют АКПП и кондиционер. Они строятся с учётом левостороннего движения, а фары у них сфокусированы.
+                </p><a target="_blank" href="https://ru.wikipedia.org/wiki/JDM" class="fca">Узнать больше</a>
+            </div>
+            <div class="kjs"><img class="fc"
+                    src="https://i.postimg.cc/MK6S7L68/1701214544-sportishka-com-p-louraider-avtomobil-krasivo-44.jpg">
+                <h3>Лоурайдер</h3>
+                <p>Лоурайдер — это особый вид тюнинга автомобилей, который характеризуется максимально заниженной
+                    пневмоподвеской. Лоурайдеры часто использовались для социальной функции, например, для работы в
+                    клубах автолюбителей.</p><a target="_blank"
+                    href="https://ru.wikipedia.org/wiki/%D0%9B%D0%BE%D1%83%D1%80%D0%B0%D0%B9%D0%B4%D0%B5%D1%80"
+                    class="fca">Узнать больше</a>
+            </div>
+            <div class="kjs"><img class="fc"
+                    src="https://i.postimg.cc/66LKGKN0/forgiato-241949057-1017479872361440-7437684518121102672-n.jpg">
+                <h3>Hi-riser</h3>
+                <p>Автомобили в стиле хай райзер отличаются увеличенным дорожным просветом, большими колёсами и
+                    модификациями внешнего вида, такими как индивидуальная покраска, замена двигателя и улучшение
+                    характеристик.</p><a target="_blank" href="https://en.wikipedia.org/wiki/Hi-riser"
+                    class="fca">Узнать больше</a>
+            </div>
+        </div>
+    </div>
+    <div id="why" class="hg">
+        <h1>Почему мы?</h1>
+        <div class="hgls">
+            <div class="kjs"><img width="90%" height="90%" class="fc" src="https://imgbly.com/ib/ZLUkRCID69.png">
+                <h3>10 лет опыта на рынке</h3>
+                <p>Мы занимаемся тюнингом автомобилей на протяжении 10 лет.</p>
+            </div>
+            <div class="kjs"><img width="90%" height="90%" class="fc" src="https://imgbly.com/ib/C7SknAKIXW.png">
+                <h3>Точные сроки</h3>
+                <p>Доставка и установка деталей в среднем занимает всего лишь 2-3 дня.</p>
+            </div>
+            <div class="kjs"><img width="90%" height="90%" class="fc" src="https://imgbly.com/ib/Y7BzLUzofC.png">
+                <h3>Реальные отзывы</h3>
+                <p>Мы размещаем на нашем сайте только реальные отзывы клиентов.</p>
+            </div>
+        </div>
+        <div class="hgls">
+            <div class="kjs"><img width="90%" height="90%" class="fc" src="https://imgbly.com/ib/CFmwugubl2.png">
+                <h3>Гибкая система скидок</h3>
+                <p>Мы предоставляем постоянным покупателям скидки до 20%.</p>
+            </div>
+            <div class="kjs"><img width="90%" height="90%" class="fc" src="https://imgbly.com/ib/xWSmW9zCIi.png">
+                <h3>Честный расчет</h3>
+                <p>Наши менеджеры проводят максимально прозрачные расчеты.</p>
+            </div>
+            <div class="kjs"><img width="90%" height="90%" class="fc" src="https://imgbly.com/ib/ato5luarG4.png">
+                <h3>Гарантия на тюнинг 2 года</h3>
+                <p>Мы предоставляем абсолютно на весь тюнинг гарантию 2 года.</p>
+            </div>
+        </div>
+    </div>
+    <div id="question" class="hg">
+        <h1>Задать вопрос</h1>
+        <form>
+            <input class="pol" type="text" placeholder="Ваше имя" required>
+            <input class="pol" type="email" placeholder="Ваша почта" required>
+            <input class="pol" type="text" placeholder="Ваш вопрос" required>
+            <span class="lo"><i class="fa-regular fa-paper-plane"></i><input class="s" type="submit"></span>
+        </form>
+    </div>
+</body>
+
+</html>
